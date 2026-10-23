@@ -64,3 +64,18 @@ message = "请输入文本"
 province = "广西"
 name = "韦雄耀"
 university = "南宁职业技术大学"
+
+[[students]]
+province = "广西"
+name = "李广聪"
+university = "广西工业职业技术学院"
+
+[[students]]
+province = "广西"
+name = "蒙锐华"
+university = "广西工业职业技术学院"
+
+[[students]]
+province = "广西"
+name = "黄桂林"
+university = "广西工业职业技术学院"
