@@ -179,3 +179,8 @@ university = "丽水学院"
 province = "广西"
 name = "梁庚"
 university = "广西医科大学"
+
+[[students]]
+province = "山西"
+name = "李尊"
+university = "山西大同大学"
