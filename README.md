@@ -46,6 +46,8 @@ bun run preview
 3. 等待 Actions 中的 `Deploy to GitHub Pages` 完成，访问：
    `https://<用户名>.github.io/<仓库名>/`
 
+如果首次运行在 **Configure Pages** 步骤报 `Get Pages site failed` / `HttpError: Not Found`，说明仓库还没有启用 Pages。请先完成上面第 2 步，然后在 Actions 页面点 **Re-run all jobs**。Workflow 已设置 `enablement: true`，在权限允许时也会尝试自动创建 Pages 站点；私有仓库需要 GitHub Pro/Team 或更高套餐才支持 Pages。
+
 Vite 的 base 路径由 workflow 自动计算：
 
 - 仓库名是 `<用户名>.github.io`：部署在根路径 `/`；
