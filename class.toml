@@ -1,0 +1,66 @@
+[school]
+name = "贵糖高中"
+name_en = "Guitang High School"
+class_name = "2301 班"
+class_code = "2301"
+seal = "贰叁零壹"
+
+[copy]
+hero_phrase = "山海有信"
+motto = "山河远阔 · 各赴前程"
+motto_en = "Where the wind takes us."
+stats_title = "散作满天星"
+stats_note = """
+从{school}的同一间教室出发，
+我们把名字写向天南海北。
+"""
+roster_note = """
+山高水远，各自有方向。
+愿每一程，都抵达心之所向。
+"""
+letter_title = "写给远行的你们"
+letter_aside = "各科老师 · 毕业寄语"
+letter_kicker = "见字如晤，展信舒颜。"
+letter_body = [
+  "此去山高水长，愿你们各有山海，各有归途。",
+]
+letter_date = "毕业季"
+letter_stamp = "贰叁零壹"
+letter_seal = "前程似锦"
+footer_motto = "山河远阔，各有归途。"
+
+[[teachers]]
+subject = "语文"
+name = "陈悦"
+message = "请输入文本"
+
+[[teachers]]
+subject = "数学"
+name = "黄艳"
+message = "请输入文本"
+
+[[teachers]]
+subject = "英语"
+name = "曾少梅"
+message = "请输入文本"
+
+[[teachers]]
+subject = "物理"
+name = "钟家乐"
+message = "请输入文本"
+head_teacher = true
+
+[[teachers]]
+subject = "化学"
+name = "吴远芳"
+message = "请输入文本"
+
+[[teachers]]
+subject = "生物"
+name = "甘丹霞"
+message = "请输入文本"
+
+[[students]]
+province = "广西"
+name = "韦雄耀"
+university = "南宁职业技术大学"

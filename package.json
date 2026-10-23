@@ -1,0 +1,38 @@
+{
+  "name": "guitang-2301-class-atlas",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "oxlint",
+    "typecheck": "tsc -b",
+    "map:build": "bun scripts/prepare-map.mjs",
+    "serve": "bun scripts/serve.ts"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "smol-toml": "^1.9.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "^3.1.1",
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.88.0",
+    "topojson-client": "^3.1.0",
+    "topojson-server": "^3.0.1",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.4"
+  },
+  "description": "贵糖高中 2301 班毕业去向图——由 class.toml 驱动的纸墨风格班级地图。",
+  "packageManager": "bun@1.4.3"
+}

@@ -1,0 +1,264 @@
+html:has(.province-dialog[open]) {
+  overflow: hidden;
+}
+
+.province-dialog {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: clamp(16px, 3vw, 42px);
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: none;
+}
+
+.province-dialog[open] {
+  display: grid;
+  place-items: center;
+}
+
+.province-dialog::backdrop {
+  background: rgba(28, 25, 20, 0.55);
+  backdrop-filter: blur(7px) saturate(0.8);
+  animation: backdrop-in 0.4s ease both;
+}
+
+.province-dialog__panel {
+  position: relative;
+  width: min(568px, 100%);
+  overflow: hidden;
+  padding: clamp(26px, 4.4vw, 52px);
+  border: 1px solid var(--line-strong);
+  background:
+    radial-gradient(ellipse at 88% 4%, rgba(193, 163, 109, 0.12), transparent 42%),
+    var(--paper-soft);
+  box-shadow: 0 44px 110px rgba(16, 12, 7, 0.38);
+  animation: dialog-in 0.5s var(--ease-out) both;
+}
+
+.province-dialog__panel::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--region), color-mix(in srgb, var(--region) 20%, transparent) 68%, transparent);
+  content: '';
+}
+
+.province-dialog__close {
+  position: absolute;
+  z-index: 2;
+  top: 13px;
+  right: 13px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: var(--ink-3);
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.35s var(--ease-out);
+}
+
+.province-dialog__close svg {
+  display: block;
+}
+
+.province-dialog__close:hover {
+  border-color: var(--line);
+  background: rgba(255, 252, 245, 0.5);
+  color: var(--ink);
+  transform: rotate(90deg);
+}
+
+.province-dialog__head {
+  position: relative;
+  padding-bottom: 19px;
+  border-bottom: 1px solid var(--line);
+}
+
+.province-dialog__head h2 {
+  margin-top: 6px;
+  font-size: clamp(2.7rem, 7vw, 4.35rem);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  line-height: 1.05;
+}
+
+.province-dialog__count {
+  margin-top: 6px;
+  color: var(--ink-3);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.province-dialog__count span {
+  margin-right: 7px;
+  color: var(--region);
+  font-family: var(--font-latin);
+  font-size: 1.9rem;
+  line-height: 1;
+  vertical-align: -2px;
+}
+
+.province-dialog__ghost {
+  position: absolute;
+  right: 0;
+  bottom: 9px;
+  color: var(--region);
+  font-family: var(--font-brush);
+  font-size: 8rem;
+  line-height: 0.8;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.province-dialog__list {
+  padding-top: 3px;
+}
+
+.province-dialog__list li {
+  display: grid;
+  grid-template-columns: 2.1em minmax(4.7em, auto) minmax(0, 1fr);
+  gap: 13px;
+  align-items: baseline;
+  padding: 13px 0;
+  border-bottom: 1px dotted var(--line);
+  opacity: 0;
+  animation: dialog-row 0.5s var(--ease-out) both;
+  animation-delay: calc(0.1s + var(--i) * 55ms);
+}
+
+.province-dialog__index {
+  color: var(--ink-4);
+  font-family: var(--font-latin);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.province-dialog__name {
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.province-dialog__school {
+  color: var(--ink-3);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.province-dialog__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-top: 27px;
+}
+
+.province-dialog__foot p {
+  color: var(--ink-2);
+  font-family: var(--font-brush);
+  font-size: 1.3rem;
+  letter-spacing: 0.11em;
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.975);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes dialog-row {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .province-dialog {
+    align-items: end;
+    padding: 0;
+  }
+
+  .province-dialog[open] {
+    place-items: end center;
+  }
+
+  .province-dialog__panel {
+    width: 100%;
+    max-height: 92dvh;
+    overflow-y: auto;
+    padding: 28px 20px max(24px, env(safe-area-inset-bottom));
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    animation: dialog-sheet-in 0.45s var(--ease-out) both;
+  }
+
+  .province-dialog__head h2 {
+    font-size: 2.8rem;
+  }
+
+  .province-dialog__ghost {
+    font-size: 6.5rem;
+  }
+
+  .province-dialog__list li {
+    grid-template-columns: 1.9em minmax(4.3em, auto) minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .province-dialog__school {
+    font-size: 0.75rem;
+  }
+
+  .province-dialog__foot {
+    margin-top: 22px;
+  }
+
+  @keyframes dialog-sheet-in {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
