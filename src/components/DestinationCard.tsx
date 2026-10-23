@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import type { Destination } from '../data/provinces'
+import { groupByUniversity } from '../lib/school-groups'
 
 type DestinationCardProps = {
   destination: Destination
@@ -7,9 +8,12 @@ type DestinationCardProps = {
 }
 
 export function DestinationCard({ destination, index }: DestinationCardProps) {
+  const groups = groupByUniversity(destination.students)
+  const wide = destination.students.length > 5
+
   return (
     <article
-      className="destination-card"
+      className={`destination-card${wide ? ' destination-card--wide' : ''}`}
       data-region={destination.region}
       style={{ '--i': index } as CSSProperties}
     >
@@ -26,14 +30,22 @@ export function DestinationCard({ destination, index }: DestinationCardProps) {
 
       <h3>{destination.province}</h3>
 
-      <ul className="destination-card__students">
-        {destination.students.map((student, studentIndex) => (
-          <li key={`${student.name}-${studentIndex}`}>
-            <span className="destination-card__name">{student.name}</span>
-            <span className="destination-card__school">{student.university}</span>
-          </li>
+      <div className="destination-card__groups">
+        {groups.map((group) => (
+          <section
+            className="destination-card__group"
+            key={group.university}
+            aria-label={`${group.university}，${group.students.length} 人`}
+          >
+            <h4>{group.university}</h4>
+            <p>
+              {group.students.map((student) => (
+                <span key={student.name}>{student.name}</span>
+              ))}
+            </p>
+          </section>
         ))}
-      </ul>
+      </div>
     </article>
   )
 }

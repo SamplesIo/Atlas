@@ -58,7 +58,7 @@ export function DestinationIndex() {
           </p>
         </div>
 
-        <div className="roster__grid" data-reveal>
+        <div className="roster__grid" data-count={destinations.length} data-reveal>
           {destinations.map((destination, index) => (
             <DestinationCard
               key={`${filter}-${destination.province}`}

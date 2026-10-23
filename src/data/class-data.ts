@@ -1,4 +1,5 @@
 import { parse } from 'smol-toml'
+import { comparePinyin } from '../lib/pinyin'
 import {
   PROVINCE_REGION,
   PROVINCES,
@@ -166,7 +167,7 @@ const sortDestinations = (destinations: readonly Destination[]): readonly Destin
     (a, b) =>
       regionOrder.get(a.region)! - regionOrder.get(b.region)! ||
       b.students.length - a.students.length ||
-      a.province.localeCompare(b.province, 'zh-Hans-CN'),
+      comparePinyin(a.province, b.province),
   )
 }
 
@@ -266,7 +267,13 @@ export function loadClassData(source: string): ClassData {
     ([province, students]) => ({
       province,
       region: PROVINCE_REGION[province],
-      students,
+      // The TOML order is irrelevant: show every province's classmates by
+      // pinyin, and keep the modal/map labels in the same order.
+      students: [...students].sort(
+        (a, b) =>
+          comparePinyin(a.name, b.name) ||
+          comparePinyin(a.university, b.university),
+      ),
     }),
   )
 

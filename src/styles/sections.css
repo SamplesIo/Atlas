@@ -327,82 +327,100 @@
   animation-delay: calc(var(--i) * 45ms);
 }
 
-.destination-card:hover {
-  border-color: color-mix(in srgb, var(--region) 44%, var(--line));
-  background:
-    linear-gradient(180deg, rgba(255, 252, 245, 0.78), rgba(255, 252, 245, 0.16));
-  box-shadow: var(--shadow-soft);
-  transform: translateY(-5px);
+.roster__grid[data-count='1'] .destination-card {
+  grid-column: 1 / -1;
 }
 
 .destination-card__head {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 
 .destination-card__region {
   color: var(--region);
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
 }
 
 .destination-card__count {
-  color: color-mix(in srgb, var(--region) 74%, var(--ink));
+  color: var(--region);
   font-family: var(--font-latin);
-  font-size: 1.48rem;
-  font-variant-numeric: lining-nums;
-  line-height: 0.9;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
 }
 
 .destination-card h3 {
   position: relative;
   z-index: 1;
-  margin-top: 7px;
-  font-size: clamp(1.58rem, 2vw, 2rem);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  line-height: 1.35;
+  margin: 5px 0 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(1.42rem, 2.4vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: 0.09em;
 }
 
-.destination-card__students {
+.destination-card__groups {
   position: relative;
   z-index: 1;
   margin-top: 14px;
 }
 
-.destination-card__students li {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 10px;
-  align-items: baseline;
-  padding: 7px 0;
+.destination-card__group {
+  padding: 9px 0;
   border-top: 1px dotted color-mix(in srgb, var(--ink) 14%, transparent);
 }
 
-.destination-card__students li:first-child {
+.destination-card__group:first-child {
   border-top: 0;
 }
 
-.destination-card__name {
+.destination-card__group h4 {
   color: var(--ink);
-  font-size: 0.88rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.destination-card__group p {
+  margin-top: 2px;
+  color: var(--ink-2);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+}
+
+.destination-card__group p span {
   white-space: nowrap;
 }
 
-.destination-card__school {
-  color: var(--ink-2);
-  font-size: 0.75rem;
-  letter-spacing: 0.01em;
-  line-height: 1.55;
-  text-align: right;
-  overflow-wrap: anywhere;
+.destination-card__group p span + span::before {
+  color: var(--ink-4);
+  content: ' · ';
+}
+
+@media (min-width: 901px) {
+  .destination-card--wide {
+    grid-column: span 2;
+  }
+
+  .destination-card--wide .destination-card__groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(24px, 2.6vw, 40px);
+  }
+
+  .destination-card--wide .destination-card__group:nth-child(2) {
+    border-top: 0;
+  }
 }
 
 .destination-card__ghost {
@@ -667,10 +685,12 @@
 
 .wish--left .wish-card {
   transform-origin: calc(100% - 20px) 20px;
+  padding-right: clamp(38px, 3vw, 46px);
 }
 
 .wish--right .wish-card {
   transform-origin: 20px 20px;
+  padding-left: clamp(46px, 3.4vw, 56px);
 }
 
 .wish-card[data-head='true'] {
@@ -696,6 +716,24 @@
 
 .wish--right .wish-card__hole {
   left: 20px;
+}
+
+.wish-card__hole::before {
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  background: rgba(120, 96, 61, 0.38);
+  content: '';
+}
+
+.wish--left .wish-card__hole::before {
+  left: 100%;
+  width: 20px;
+}
+
+.wish--right .wish-card__hole::before {
+  right: 100%;
+  width: 20px;
 }
 
 .wish-card__head {
@@ -840,6 +878,14 @@
     padding: 24px 24px 26px;
   }
 
+  .wish--left .wish-card {
+    padding-right: 40px;
+  }
+
+  .wish--right .wish-card {
+    padding-left: 48px;
+  }
+
   .wish-card__stamp {
     display: none;
   }
@@ -901,8 +947,14 @@
   .wish-card {
     width: 100%;
     margin: 0;
-    padding: 24px 22px 24px;
+    padding: 24px 22px 24px 48px;
     transform-origin: 20px 20px;
+  }
+
+  .wish--left .wish-card,
+  .wish--right .wish-card {
+    padding-left: 48px;
+    padding-right: 22px;
   }
 
   .wish__string {
@@ -925,6 +977,13 @@
   .wish--right .wish-card__hole {
     right: auto;
     left: 20px;
+  }
+
+  .wish--left .wish-card__hole::before,
+  .wish--right .wish-card__hole::before {
+    right: 100%;
+    left: auto;
+    width: 20px;
   }
 
   .wishes-foot {

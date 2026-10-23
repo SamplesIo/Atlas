@@ -1,5 +1,6 @@
-import { useEffect, useRef, type CSSProperties } from 'react'
+import { useEffect, useRef } from 'react'
 import type { Destination } from '../data/provinces'
+import { groupByUniversity } from '../lib/school-groups'
 import { Seal } from './Seal'
 
 type ProvinceDialogProps = {
@@ -71,17 +72,24 @@ export function ProvinceDialog({ destination, onClose }: ProvinceDialogProps) {
             </span>
           </header>
 
-          <ol className="province-dialog__list">
-            {destination.students.map((student, index) => (
-              <li key={`${student.name}-${index}`} style={{ '--i': index } as CSSProperties}>
-                <span className="province-dialog__index">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="province-dialog__name">{student.name}</span>
-                <span className="province-dialog__school">{student.university}</span>
-              </li>
-            ))}
-          </ol>
+          <div className="province-dialog__list">
+            <div className="province-dialog__groups">
+              {groupByUniversity(destination.students).map((group) => (
+                <section
+                  className="province-dialog__group"
+                  key={group.university}
+                  aria-label={`${group.university}，${group.students.length} 人`}
+                >
+                  <h3>{group.university}</h3>
+                  <p>
+                    {group.students.map((student) => (
+                      <span key={student.name}>{student.name}</span>
+                    ))}
+                  </p>
+                </section>
+              ))}
+            </div>
+          </div>
 
           <footer className="province-dialog__foot">
             <p>山高水长，后会有期。</p>

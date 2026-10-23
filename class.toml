@@ -47,7 +47,7 @@ message = "请输入文本"
 [[teachers]]
 subject = "物理"
 name = "钟家乐"
-message = "请输入文本"
+message = "天高任鸟飞，海阔凭鱼跃"
 head_teacher = true
 
 [[teachers]]
@@ -62,8 +62,13 @@ message = "请输入文本"
 
 [[students]]
 province = "广西"
-name = "韦雄耀"
-university = "南宁职业技术大学"
+name = "陈许杜"
+university = "玉林师范学院"
+
+[[students]]
+province = "广西"
+name = "黄桂林"
+university = "广西工业职业技术学院"
 
 [[students]]
 province = "广西"
@@ -72,10 +77,85 @@ university = "广西工业职业技术学院"
 
 [[students]]
 province = "广西"
+name = "李始航"
+university = "广西建设职业技术学院"
+
+[[students]]
+province = "广西"
+name = "梁耀"
+university = "贺州学院"
+
+[[students]]
+province = "广西"
+name = "廖佳"
+university = "广西民族大学"
+
+[[students]]
+province = "重庆"
+name = "罗涛"
+university = "重庆机电职业技术大学"
+
+[[students]]
+province = "广西"
 name = "蒙锐华"
 university = "广西工业职业技术学院"
 
 [[students]]
 province = "广西"
-name = "黄桂林"
-university = "广西工业职业技术学院"
+name = "潘鹏羽"
+university = "玉林师范学院"
+
+[[students]]
+province = "重庆"
+name = "覃芯妮"
+university = "长江师范学院"
+
+[[students]]
+province = "广西"
+name = "韦雄耀"
+university = "南宁职业技术大学"
+
+[[students]]
+province = "广西"
+name = "韦振晖"
+university = "南宁师范大学"
+
+[[students]]
+province = "广西"
+name = "玉锴勤"
+university = "广西民族大学"
+
+[[students]]
+province = "广西"
+name = "易慧萍"
+university = "广西科技师范学院"
+
+[[students]]
+province = "广西"
+name = "陆海慧"
+university = "广西科技师范学院"
+
+[[students]]
+province = "广西"
+name = "韦宇扬"
+university = "广西卫生职业技术学院"
+
+[[students]]
+province = "广西"
+name = "黄新标"
+university = "贺州学院"
+
+[[students]]
+province = "广西"
+name = "彭伟春"
+university = "百色学院"
+
+[[students]]
+province = "广西"
+name = "杨嘉祥"
+university = "桂林旅游学院"
+
+[[students]]
+province = "广西"
+name = "韦健霖"
+university = "广西农业职业技术大学"
