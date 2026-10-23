@@ -58,7 +58,7 @@ message = "请输入文本"
 [[teachers]]
 subject = "生物"
 name = "甘丹霞"
-message = "请输入文本"
+message = "少年奔赴四方，山海皆可踏，前路尽繁花，前程似锦"
 
 [[students]]
 province = "广西"
