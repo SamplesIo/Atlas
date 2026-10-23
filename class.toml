@@ -184,3 +184,8 @@ university = "广西医科大学"
 province = "山西"
 name = "李尊"
 university = "山西大同大学"
+
+[[students]]
+province = "辽宁"
+name = "郑智斌"
+university = "辽东学院"
