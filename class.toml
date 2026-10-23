@@ -159,3 +159,23 @@ university = "桂林旅游学院"
 province = "广西"
 name = "韦健霖"
 university = "广西农业职业技术大学"
+
+[[students]]
+province = "广西"
+name = "梁明轩"
+university = "梧州学院"
+
+[[students]]
+province = "广西"
+name = "甘仁杰"
+university = "梧州学院"
+
+[[students]]
+province = "浙江"
+name = "韦帮淏"
+university = "丽水学院"
+
+[[students]]
+province = "广西"
+name = "梁庚"
+university = "广西医科大学"
