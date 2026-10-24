@@ -204,3 +204,33 @@ university = "广西民族大学相思湖学院"
 province = "广西"
 name = "胡乐晨"
 university = "玉林师范学院"
+
+[[students]]
+province = "福建"
+name = "磨柏森 "
+university = "武夷学院"
+
+[[students]]
+province = "黑龙江"
+name = "闫珑腾 "
+university = "东北石油大学"
+
+[[students]]
+province = "广西"
+name = "李炜豪 "
+university = "南宁职业技术大学"
+
+[[students]]
+province = "广西"
+name = "杨成彬 "
+university = "广西民族大学"
+
+[[students]]
+province = "广西"
+name = "李仙平 "
+university = "桂林理工大学南宁分校"
+
+[[students]]
+province = "广西"
+name = "李嘉海 "
+university = "柳州职业技术大学"
