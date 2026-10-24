@@ -42,7 +42,7 @@ message = "万物可爱，人间值得，希望天南海北的你们，都能万
 [[teachers]]
 subject = "英语"
 name = "曾少梅"
-message = "请输入文本"
+message = "The world is your oyster. Stay strong, keep going！Good luck to you all"
 
 [[teachers]]
 subject = "物理"
@@ -53,7 +53,7 @@ head_teacher = true
 [[teachers]]
 subject = "化学"
 name = "吴远芳"
-message = "请输入文本"
+message = "少年自有玫瑰与星光，愿乘风破浪，前程坦荡"
 
 [[teachers]]
 subject = "生物"
